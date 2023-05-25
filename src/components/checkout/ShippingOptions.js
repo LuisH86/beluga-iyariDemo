@@ -21,7 +21,7 @@ function ShippingOptions(props) {
   const getLabel = o => (
     <div>
       <Label>{o.name}</Label>
-      <span>{(o.price/100).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</span>
+      <span>{(o.price/100).toLocaleString('en-US', { style: 'currency', currency: 'MXN' })}</span>
     </div>
   )
 

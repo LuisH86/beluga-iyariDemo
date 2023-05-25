@@ -57,7 +57,7 @@ function Cart(props) {
   if (items && items.length) {
     totalPrice = items.map(i => (i.quantity * i.price))
       .reduce((a, b) => a + Number(b))
-      .toLocaleString('en-US', { style: 'currency', currency: 'USD' })
+      .toLocaleString('en-US', { style: 'currency', currency: 'MXN' })
   }
 
   return (

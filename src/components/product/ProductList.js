@@ -64,12 +64,12 @@ function ProductList(props) {
           skuList = skuList.filter(s => s.product === product.stripe_id)
             .map(s => s.price / 100)
           if (skuList.length === 1) {
-            product["price"] = skuList[0].toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+            product["price"] = skuList[0].toLocaleString('en-US', { style: 'currency', currency: 'MXN' });
           } else {
             let min = Math.min(...skuList),
               max = Math.max(...skuList);
-            if (min === max) product["price"] = skuList[0].toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-            else product["price"] = `${min.toLocaleString('en-US', { style: 'currency', currency: 'USD' })} - ${max.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}`;
+            if (min === max) product["price"] = skuList[0].toLocaleString('en-US', { style: 'currency', currency: 'MXN' });
+            else product["price"] = `${min.toLocaleString('en-US', { style: 'currency', currency: 'MXN' })} - ${max.toLocaleString('en-US', { style: 'currency', currency: 'MXN' })}`;
           }
         })
         setProducts(newProducts)

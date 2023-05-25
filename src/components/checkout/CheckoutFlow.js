@@ -98,7 +98,7 @@ function CheckoutFlow(props) {
         </div>
     );
   }
-  const displayShippingOption = shippingOption ? `${shippingOption.name} — ${(shippingOption.price/100).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}` : "";
+  const displayShippingOption = shippingOption ? `${shippingOption.name} — ${(shippingOption.price/100).toLocaleString('en-US', { style: 'currency', currency: 'MXN' })}` : "";
 
   return (
     <Grid item md={8} xs={12}>

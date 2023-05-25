@@ -78,7 +78,7 @@ const ProductDetails = props => {
     <div>
       <h2 style={{ marginTop: "0" }}>{product.name}</h2>
       <Description>{product.description}</Description>
-      { !!variants.length &&
+      { !variants.length &&
         <FlexWrapper>
           {variants.map((v,i) => (
             <Row key={`variant${i}`}>
@@ -113,7 +113,7 @@ const ProductDetails = props => {
         { inventoryStatus }
       </div>
       <div style={{ fontWeight: "600", textAlign: "right" }}>
-        {props.price && (Number(props.price)).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
+        {props.price && (Number(props.price)).toLocaleString('en-US', { style: 'currency', currency: 'MXN' })}
       </div>
       <Right>
         <Button
@@ -134,7 +134,7 @@ const ProductDetails = props => {
           />
         )}
       </Right>
-      { product.details &&
+      { product.details && Array.isArray(product.details) &&
         <Details>
           <ul>
             {product.details.map((detail,i) =>

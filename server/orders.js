@@ -35,7 +35,7 @@ const email = new Email({
 
 function sendEmail(status, order) {
   let items = order.items.slice(0, -2).map(o => {
-    o.displayAmount = (o.amount / 100).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+    o.displayAmount = (o.amount / 100).toLocaleString('en-US', { style: 'currency', currency: 'MXN' });
     return o;
   });
   const time = new Date(order.status_transitions.paid * 1000);
@@ -57,8 +57,8 @@ function sendEmail(status, order) {
       locals: {
         order: order,
         order_id: order.id.split("_")[1],
-        order_subtotal: (items.reduce((a, b) => (a + b.amount), 0) / 100).toLocaleString('en-US', { style: 'currency', currency: 'USD' }),
-        order_total: (order.amount / 100).toLocaleString('en-US', { style: 'currency', currency: 'USD' }),
+        order_subtotal: (items.reduce((a, b) => (a + b.amount), 0) / 100).toLocaleString('en-US', { style: 'currency', currency: 'MXN' }),
+        order_total: (order.amount / 100).toLocaleString('en-US', { style: 'currency', currency: 'MXN' }),
         order_date: `${time.getMonth()}/${time.getDate()}/${time.getFullYear()}`,
         shipping_cost,
         items,
@@ -71,7 +71,7 @@ function sendEmail(status, order) {
 
 app.post('/order/create', function(req, res) {
   stripe.orders.create({
-    currency: 'usd',
+    currency: 'mxn',
     items: req.body.items,
     shipping: req.body.shipping,
     metadata: req.body.metadata,

@@ -50,7 +50,7 @@ app.post("/delete-product/:id", function(req, res) {
 app.post("/create-sku", function(req, res) {
   let sku = {
     price: +req.body.price,
-    currency: 'usd',
+    currency: 'mxn',
     inventory: {
       type: req.body.inventory.type
     },

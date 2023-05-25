@@ -67,14 +67,14 @@ const CartSmall = ({ items, shippingOption }) => {
         <Row>
           <span className="small-text">Subtotal</span>
           <span className="black-text small-text">
-            {subtotal.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
+            {subtotal.toLocaleString('en-US', { style: 'currency', currency: 'MXN' })}
           </span>
         </Row>
         <Row>
           <span className="small-text">Shipping</span>
           { shippingOption && (
             <span className="black-text small-text">
-              {shippingOption.price === 0 ? "FREE" : (shippingOption.price/100).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
+              {shippingOption.price === 0 ? "FREE" : (shippingOption.price/100).toLocaleString('en-US', { style: 'currency', currency: 'MXN' })}
             </span>
           )}
         </Row>
@@ -82,7 +82,7 @@ const CartSmall = ({ items, shippingOption }) => {
         <Row>
           <span>Total</span>
           <span className="black-text">
-            {total.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
+            {total.toLocaleString('en-US', { style: 'currency', currency: 'MXN' })}
           </span>
         </Row>
     </Wrapper>
